@@ -5,11 +5,13 @@ import Movies from "./Movies/Movies.js";
 
 function App() {
   const [movies, setMovies] = useState([]);
+
   useEffect(() => {
     async function getData() {
       const response = await fetch("/api/movies");
       const payload = await response.json();
       setMovies(payload.data);
+      document.body.style.overflow = "hidden";
     }
     getData();
   }, []);
@@ -30,8 +32,8 @@ function App() {
           Learn React
         </a>
         <p>Nice Movies:</p>
-       
-        <Movies  movies={movies} />
+
+        <Movies movies={movies} />
       </header>
     </div>
   );

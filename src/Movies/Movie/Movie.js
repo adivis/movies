@@ -1,21 +1,14 @@
 import React, { useState } from "react";
 import "./styles.css";
-import {
-  Card,
-  CardActions,
-  CardContent,
-  Button,
-  Typography,
-} from "@material-ui/core";
+import { Card, CardActions, CardContent, Typography } from "@material-ui/core";
 import Modal from "./Modal";
-const Movie = ({ movie }) => {
-  const [movieData, setMovieData] = useState([]);
-  const [openModal, setOpenModal] = useState(false);
+const Movie = ({ movie, setMovieData, setOpenModal }) => {
   async function getData(id) {
     setOpenModal(true);
     const response = await fetch("/api/movies" + id);
     const payload = await response.json();
-    setMovieData(payload.data);
+    console.log(payload.data);
+    setMovieData(payload.data[0]);
   }
   return (
     <Card style={{ height: "100%" }} className="card">
@@ -31,10 +24,9 @@ const Movie = ({ movie }) => {
         </Typography>
       </CardContent>
       <CardActions className="cardActions">
-        <Button size="small" color="primary" onClick={() => getData(movie.id)}>
+        <button size="small" color="primary" onClick={() => getData(movie.id)}>
           Open
-        </Button>
-        {openModal && <Modal movieData={movieData} />}
+        </button>
       </CardActions>
     </Card>
   );
