@@ -1,27 +1,8 @@
-.media {
-    height: 0;
-    padding-top: "60%";
-    background-color: "rgba(0, 0, 0, 0.5)";
-  }
 .card {
-    display: "flex";
-    flex-direction: "column";
-    justify-content: "space-between";
-    border-radius: "15px";
-    height: "100%";
-    position: "relative";
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
-
-.cardActions {
-    padding: "0 16px 8px 16px";
-    display: "flex";
-  }
-.description{
-    display: "flex";
-    flex-direction: "column";
-    justify-content: "space-between";
-  }
-
   .modalBg {
     top: 0;
     left: 0;
@@ -34,7 +15,13 @@
     align-items: center;
     color: black;
   }
-  
+  .openBtn{
+    background-color: rgb(14, 14, 157);
+    color: white;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 5px;
+  }
   .container {
     width: 500px;
     height: 500px;

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Grid } from "@material-ui/core";
 
 import Movie from "./Movie/Movie.js";
-import "./styles.css";
 import Modal from "./Movie/Modal.js";
 
 const Movies = ({ movies }) => {
@@ -19,7 +18,6 @@ const Movies = ({ movies }) => {
     <div>
       {openModal && <Modal movieData={movieData} setOpenModal={setOpenModal} />}
       <Grid
-        className="mainContainer"
         container
         alignItems="stretch"
         spacing={3}

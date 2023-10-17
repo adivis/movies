@@ -11,7 +11,7 @@ const Movie = ({ movie, setMovieData, setOpenModal }) => {
   }
   return (
     <Card style={{ height: "100%" }} className="card">
-      <CardContent className="description">
+      <CardContent>
         <Typography className="title" variant="h6">
           {movie.original_title}
         </Typography>
@@ -22,8 +22,8 @@ const Movie = ({ movie, setMovieData, setOpenModal }) => {
           {movie.vote_average}
         </Typography>
       </CardContent>
-      <CardActions style={{"justifyContent":"center"}} className="cardActions">
-        <button size="small" color="primary" onClick={() => getData(movie.id)}>
+      <CardActions style={{ justifyContent: "center" }}>
+        <button className="openBtn" onClick={() => getData(movie.id)}>
           Open
         </button>
       </CardActions>
