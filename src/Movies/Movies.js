@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Grid, CircularProgress } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 
 import Movie from "./Movie/Movie.js";
 import "./styles.css";
@@ -14,7 +14,6 @@ const Movies = ({ movies }) => {
     } else {
       document.body.style.overflow = "unset";
     }
-    console.log(";;;;", movieData);
   }, [openModal]);
   return (
     <div>

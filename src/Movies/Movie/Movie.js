@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "./styles.css";
 import { Card, CardActions, CardContent, Typography } from "@material-ui/core";
-import Modal from "./Modal";
 const Movie = ({ movie, setMovieData, setOpenModal }) => {
   async function getData(id) {
     setOpenModal(true);
@@ -16,14 +15,14 @@ const Movie = ({ movie, setMovieData, setOpenModal }) => {
         <Typography className="title" variant="h6">
           {movie.original_title}
         </Typography>
-        <Typography className="title" variant="p">
+        <Typography className="title" variant="body1">
           {movie.tagline}
         </Typography>
-        <Typography className="title" variant="p">
+        <Typography className="title" variant="body2">
           {movie.vote_average}
         </Typography>
       </CardContent>
-      <CardActions className="cardActions">
+      <CardActions style={{"justifyContent":"center"}} className="cardActions">
         <button size="small" color="primary" onClick={() => getData(movie.id)}>
           Open
         </button>

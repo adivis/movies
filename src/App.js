@@ -11,7 +11,6 @@ function App() {
       const response = await fetch("/api/movies");
       const payload = await response.json();
       setMovies(payload.data);
-      document.body.style.overflow = "hidden";
     }
     getData();
   }, []);
