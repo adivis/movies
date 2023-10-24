@@ -14,6 +14,7 @@ app.get("/api/movies", (request, response) => {
   console.log("❇️ Received GET request to /api/movies");
   response.json({ data: moviesdata });
 });
+
 app.get("/api/movies:id", (request, response) => {
   const { id } = request.params;
   console.log(id);
